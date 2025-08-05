@@ -11,12 +11,19 @@ import {
   TrendingUp,
   Award,
   Zap,
-} from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import Image from "next/image";
 
 export default function Component() {
   const featuredJobs = [
@@ -104,7 +111,7 @@ export default function Component() {
       featured: false,
       remote: false,
     },
-  ]
+  ];
 
   const categories = [
     { name: "Technology", count: 1234, icon: "💻", growth: "+12%" },
@@ -113,7 +120,7 @@ export default function Component() {
     { name: "Sales", count: 432, icon: "💼", growth: "+5%" },
     { name: "Finance", count: 321, icon: "💰", growth: "+10%" },
     { name: "Healthcare", count: 654, icon: "🏥", growth: "+18%" },
-  ]
+  ];
 
   const testimonials = [
     {
@@ -140,16 +147,28 @@ export default function Component() {
       avatar: "/placeholder.svg?height=60&width=60",
       rating: 5,
     },
-  ]
+  ];
 
   const companyLogos = [
-    { name: "Google", logo: "/placeholder.svg?height=40&width=120&text=Google" },
-    { name: "Microsoft", logo: "/placeholder.svg?height=40&width=120&text=Microsoft" },
-    { name: "Apple", logo: "/placeholder.svg?height=40&width=120&text=Apple" },
-    { name: "Amazon", logo: "/placeholder.svg?height=40&width=120&text=Amazon" },
-    { name: "Meta", logo: "/placeholder.svg?height=40&width=120&text=Meta" },
-    { name: "Netflix", logo: "/placeholder.svg?height=40&width=120&text=Netflix" },
-  ]
+    {
+      name: "Google",
+      logo: "/google.png",
+    },
+    {
+      name: "Microsoft",
+      logo: "/microsoft.png",
+    },
+    { name: "Apple", logo: "/apple.png" },
+    {
+      name: "Amazon",
+      logo: "/amazon.png",
+    },
+    { name: "Meta", logo: "/meta.png" },
+    {
+      name: "Netflix",
+      logo: "/netflix.png",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
@@ -159,30 +178,40 @@ export default function Component() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-8">
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">X</span>
-                </div>
-                <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                  XGODO
-                </span>
+                <Image src="/xgodo.png" alt="logo" height={150} width={150} />
               </div>
               <nav className="hidden md:flex items-center space-x-6">
-                <a href="#" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
+                >
                   Jobs
                 </a>
-                <a href="#" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
+                >
                   Companies
                 </a>
-                <a href="#" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
+                >
                   Salary
                 </a>
-                <a href="#" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
+                >
                   Resources
                 </a>
               </nav>
             </div>
             <div className="flex items-center space-x-4">
-              <Button variant="ghost" className="text-gray-700 hover:text-purple-600 transition-colors">
+              <Button
+                variant="ghost"
+                className="text-gray-700 hover:text-purple-600 transition-colors"
+              >
                 Sign In
               </Button>
               <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 transform hover:scale-105 transition-all">
@@ -205,7 +234,8 @@ export default function Component() {
             Find Your Dream Job
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Discover thousands of job opportunities from top companies worldwide. Your next career move starts here.
+            Discover thousands of job opportunities from top companies
+            worldwide. Your next career move starts here.
           </p>
 
           {/* Search Bar */}
@@ -237,15 +267,21 @@ export default function Component() {
           {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-3xl mx-auto">
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-purple-600 mb-2">10,000+</div>
+              <div className="text-4xl md:text-5xl font-bold text-purple-600 mb-2">
+                10,000+
+              </div>
               <div className="text-gray-600 text-lg">Active Jobs</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">5,000+</div>
+              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">
+                5,000+
+              </div>
               <div className="text-gray-600 text-lg">Companies</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-green-600 mb-2">50,000+</div>
+              <div className="text-4xl md:text-5xl font-bold text-green-600 mb-2">
+                50,000+
+              </div>
               <div className="text-gray-600 text-lg">Success Stories</div>
             </div>
           </div>
@@ -255,7 +291,9 @@ export default function Component() {
       {/* Company Logos */}
       <section className="py-12 px-4 bg-white/50">
         <div className="container mx-auto">
-          <p className="text-center text-gray-600 mb-12 text-lg">Trusted by leading companies worldwide</p>
+          <p className="text-center text-gray-600 mb-12 text-lg">
+            Trusted by leading companies worldwide
+          </p>
           <div className="flex flex-wrap justify-center items-center gap-12 opacity-60">
             {companyLogos.map((company, index) => (
               <img
@@ -273,9 +311,12 @@ export default function Component() {
       <section className="py-20 px-4 bg-white/50">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Browse by Category</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Browse by Category
+            </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Explore opportunities across diverse industries and find the perfect match for your skills
+              Explore opportunities across diverse industries and find the
+              perfect match for your skills
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
@@ -288,8 +329,12 @@ export default function Component() {
                   <div className="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300">
                     {category.icon}
                   </div>
-                  <h3 className="font-semibold mb-2 text-lg">{category.name}</h3>
-                  <p className="text-sm text-gray-600 mb-3">{category.count.toLocaleString()} jobs</p>
+                  <h3 className="font-semibold mb-2 text-lg">
+                    {category.name}
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-3">
+                    {category.count.toLocaleString()} jobs
+                  </p>
                   <div className="flex items-center justify-center space-x-1 text-xs text-green-600 font-medium">
                     <TrendingUp className="w-3 h-3" />
                     <span>{category.growth}</span>
@@ -305,9 +350,12 @@ export default function Component() {
       <section className="py-20 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Featured Opportunities</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Featured Opportunities
+            </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Hand-picked positions from top companies looking for exceptional talent
+              Hand-picked positions from top companies looking for exceptional
+              talent
             </p>
           </div>
 
@@ -327,7 +375,11 @@ export default function Component() {
                 )}
 
                 <div className="absolute top-6 left-6 z-10">
-                  <Button size="sm" variant="ghost" className="h-10 w-10 p-0 bg-white/80 hover:bg-white rounded-full">
+                  <Button
+                    size="sm"
+                    variant="ghost"
+                    className="h-10 w-10 p-0 bg-white/80 hover:bg-white rounded-full"
+                  >
                     <Bookmark className="w-4 h-4 text-gray-600" />
                   </Button>
                 </div>
@@ -335,8 +387,13 @@ export default function Component() {
                 <CardHeader className="pb-4 pt-16">
                   <div className="flex items-start space-x-4">
                     <Avatar className="w-14 h-14 group-hover:scale-110 transition-transform duration-300">
-                      <AvatarImage src={job.logo || "/placeholder.svg"} alt={job.company} />
-                      <AvatarFallback className="text-lg font-semibold">{job.company[0]}</AvatarFallback>
+                      <AvatarImage
+                        src={job.logo || "/placeholder.svg"}
+                        alt={job.company}
+                      />
+                      <AvatarFallback className="text-lg font-semibold">
+                        {job.company[0]}
+                      </AvatarFallback>
                     </Avatar>
                     <div className="flex-1">
                       <CardTitle className="text-xl mb-2 group-hover:text-purple-600 transition-colors">
@@ -355,7 +412,10 @@ export default function Component() {
                       <MapPin className="w-4 h-4" />
                       <span>{job.location}</span>
                       {job.remote && (
-                        <Badge variant="outline" className="text-xs ml-2 border-green-200 text-green-700">
+                        <Badge
+                          variant="outline"
+                          className="text-xs ml-2 border-green-200 text-green-700"
+                        >
                           Remote
                         </Badge>
                       )}
@@ -412,9 +472,12 @@ export default function Component() {
       <section className="py-20 px-4 bg-gradient-to-r from-purple-50 to-blue-50">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Success Stories</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Success Stories
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Join thousands of professionals who found their dream careers through XGODO
+              Join thousands of professionals who found their dream careers
+              through XGODO
             </p>
           </div>
 
@@ -427,17 +490,29 @@ export default function Component() {
                 <CardContent className="p-8">
                   <div className="flex items-center space-x-1 mb-6">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                      <Star
+                        key={i}
+                        className="w-5 h-5 fill-yellow-400 text-yellow-400"
+                      />
                     ))}
                   </div>
-                  <p className="text-gray-700 mb-6 italic text-lg leading-relaxed">"{testimonial.content}"</p>
+                  <p className="text-gray-700 mb-6 italic text-lg leading-relaxed">
+                    "{testimonial.content}"
+                  </p>
                   <div className="flex items-center space-x-4">
                     <Avatar className="w-12 h-12">
-                      <AvatarImage src={testimonial.avatar || "/placeholder.svg"} alt={testimonial.name} />
-                      <AvatarFallback className="text-lg font-semibold">{testimonial.name[0]}</AvatarFallback>
+                      <AvatarImage
+                        src={testimonial.avatar || "/placeholder.svg"}
+                        alt={testimonial.name}
+                      />
+                      <AvatarFallback className="text-lg font-semibold">
+                        {testimonial.name[0]}
+                      </AvatarFallback>
                     </Avatar>
                     <div>
-                      <div className="font-semibold text-lg">{testimonial.name}</div>
+                      <div className="font-semibold text-lg">
+                        {testimonial.name}
+                      </div>
                       <div className="text-gray-600">{testimonial.role}</div>
                     </div>
                   </div>
@@ -456,9 +531,12 @@ export default function Component() {
             <Award className="w-5 h-5" />
             <span>Join 50,000+ successful job seekers</span>
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">Ready to Find Your Next Opportunity?</h2>
+          <h2 className="text-5xl md:text-6xl font-bold mb-6">
+            Ready to Find Your Next Opportunity?
+          </h2>
           <p className="text-xl md:text-2xl mb-12 opacity-90 max-w-3xl mx-auto">
-            Join thousands of professionals who found their dream jobs through XGODO
+            Join thousands of professionals who found their dream jobs through
+            XGODO
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button
@@ -510,22 +588,34 @@ export default function Component() {
               <h3 className="font-semibold mb-6 text-lg">Quick Links</h3>
               <ul className="space-y-3 text-gray-400">
                 <li>
-                  <a href="#" className="hover:text-white transition-colors text-base">
+                  <a
+                    href="#"
+                    className="hover:text-white transition-colors text-base"
+                  >
                     Home
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors text-base">
+                  <a
+                    href="#"
+                    className="hover:text-white transition-colors text-base"
+                  >
                     About Us
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors text-base">
+                  <a
+                    href="#"
+                    className="hover:text-white transition-colors text-base"
+                  >
                     Contact
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors text-base">
+                  <a
+                    href="#"
+                    className="hover:text-white transition-colors text-base"
+                  >
                     Privacy Policy
                   </a>
                 </li>
@@ -536,22 +626,34 @@ export default function Component() {
               <h3 className="font-semibold mb-6 text-lg">For Job Seekers</h3>
               <ul className="space-y-3 text-gray-400">
                 <li>
-                  <a href="#" className="hover:text-white transition-colors text-base">
+                  <a
+                    href="#"
+                    className="hover:text-white transition-colors text-base"
+                  >
                     Browse Jobs
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors text-base">
+                  <a
+                    href="#"
+                    className="hover:text-white transition-colors text-base"
+                  >
                     Career Advice
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors text-base">
+                  <a
+                    href="#"
+                    className="hover:text-white transition-colors text-base"
+                  >
                     Resume Builder
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors text-base">
+                  <a
+                    href="#"
+                    className="hover:text-white transition-colors text-base"
+                  >
                     Salary Guide
                   </a>
                 </li>
@@ -562,22 +664,34 @@ export default function Component() {
               <h3 className="font-semibold mb-6 text-lg">For Employers</h3>
               <ul className="space-y-3 text-gray-400">
                 <li>
-                  <a href="#" className="hover:text-white transition-colors text-base">
+                  <a
+                    href="#"
+                    className="hover:text-white transition-colors text-base"
+                  >
                     Post a Job
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors text-base">
+                  <a
+                    href="#"
+                    className="hover:text-white transition-colors text-base"
+                  >
                     Browse Resumes
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors text-base">
+                  <a
+                    href="#"
+                    className="hover:text-white transition-colors text-base"
+                  >
                     Pricing
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors text-base">
+                  <a
+                    href="#"
+                    className="hover:text-white transition-colors text-base"
+                  >
                     Employer Resources
                   </a>
                 </li>
@@ -591,5 +705,5 @@ export default function Component() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
